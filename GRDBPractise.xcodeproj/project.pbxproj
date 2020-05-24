@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		128CCF74247A95450037B0F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128CCF73247A95450037B0F9 /* AppDelegate.swift */; };
-		128CCF76247A95450037B0F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128CCF75247A95450037B0F9 /* SceneDelegate.swift */; };
 		128CCF78247A95450037B0F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128CCF77247A95450037B0F9 /* ViewController.swift */; };
 		128CCF7B247A95450037B0F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 128CCF79247A95450037B0F9 /* Main.storyboard */; };
 		128CCF7D247A95470037B0F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 128CCF7C247A95470037B0F9 /* Assets.xcassets */; };
 		128CCF80247A95470037B0F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 128CCF7E247A95470037B0F9 /* LaunchScreen.storyboard */; };
+		2B328182E4C8949BB7B81719 /* Pods_GRDBPractise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C2C8876FF939BD78FC4709B /* Pods_GRDBPractise.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		128CCF70247A95450037B0F9 /* GRDBPractise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GRDBPractise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		128CCF73247A95450037B0F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		128CCF75247A95450037B0F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		128CCF77247A95450037B0F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		128CCF7A247A95450037B0F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		128CCF7C247A95470037B0F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		128CCF7F247A95470037B0F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		128CCF81247A95470037B0F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C2C8876FF939BD78FC4709B /* Pods_GRDBPractise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GRDBPractise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5BC3ABF63A875D37C06B8B1 /* Pods-GRDBPractise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GRDBPractise.release.xcconfig"; path = "Target Support Files/Pods-GRDBPractise/Pods-GRDBPractise.release.xcconfig"; sourceTree = "<group>"; };
+		E5CB3CD7EDEE179982C5AB0B /* Pods-GRDBPractise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GRDBPractise.debug.xcconfig"; path = "Target Support Files/Pods-GRDBPractise/Pods-GRDBPractise.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B328182E4C8949BB7B81719 /* Pods_GRDBPractise.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +45,8 @@
 			children = (
 				128CCF72247A95450037B0F9 /* GRDBPractise */,
 				128CCF71247A95450037B0F9 /* Products */,
+				ADBD1BCACDF65F828F8EEF5A /* Pods */,
+				4B86A761493B6AC3E6656417 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,7 +62,6 @@
 			isa = PBXGroup;
 			children = (
 				128CCF73247A95450037B0F9 /* AppDelegate.swift */,
-				128CCF75247A95450037B0F9 /* SceneDelegate.swift */,
 				128CCF77247A95450037B0F9 /* ViewController.swift */,
 				128CCF79247A95450037B0F9 /* Main.storyboard */,
 				128CCF7C247A95470037B0F9 /* Assets.xcassets */,
@@ -67,6 +71,24 @@
 			path = GRDBPractise;
 			sourceTree = "<group>";
 		};
+		4B86A761493B6AC3E6656417 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C2C8876FF939BD78FC4709B /* Pods_GRDBPractise.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ADBD1BCACDF65F828F8EEF5A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E5CB3CD7EDEE179982C5AB0B /* Pods-GRDBPractise.debug.xcconfig */,
+				B5BC3ABF63A875D37C06B8B1 /* Pods-GRDBPractise.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +96,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 128CCF84247A95470037B0F9 /* Build configuration list for PBXNativeTarget "GRDBPractise" */;
 			buildPhases = (
+				10FE3BD62BEFCD4D5F0D7BC1 /* [CP] Check Pods Manifest.lock */,
 				128CCF6C247A95450037B0F9 /* Sources */,
 				128CCF6D247A95450037B0F9 /* Frameworks */,
 				128CCF6E247A95450037B0F9 /* Resources */,
+				D2000614D16D09BF47E92B92 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,6 +157,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		10FE3BD62BEFCD4D5F0D7BC1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GRDBPractise-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2000614D16D09BF47E92B92 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GRDBPractise/Pods-GRDBPractise-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GRDBPractise/Pods-GRDBPractise-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GRDBPractise/Pods-GRDBPractise-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		128CCF6C247A95450037B0F9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -140,7 +206,6 @@
 			files = (
 				128CCF78247A95450037B0F9 /* ViewController.swift in Sources */,
 				128CCF74247A95450037B0F9 /* AppDelegate.swift in Sources */,
-				128CCF76247A95450037B0F9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +347,7 @@
 		};
 		128CCF85247A95470037B0F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5CB3CD7EDEE179982C5AB0B /* Pods-GRDBPractise.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +366,7 @@
 		};
 		128CCF86247A95470037B0F9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5BC3ABF63A875D37C06B8B1 /* Pods-GRDBPractise.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
