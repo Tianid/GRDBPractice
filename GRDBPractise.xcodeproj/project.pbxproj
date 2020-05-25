@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,9 @@
 		128CCF7B247A95450037B0F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 128CCF79247A95450037B0F9 /* Main.storyboard */; };
 		128CCF7D247A95470037B0F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 128CCF7C247A95470037B0F9 /* Assets.xcassets */; };
 		128CCF80247A95470037B0F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 128CCF7E247A95470037B0F9 /* LaunchScreen.storyboard */; };
+		12CD7912247BDDDD0025D800 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CD7911247BDDDD0025D800 /* AsyncOperation.swift */; };
+		12CD7914247BE6350025D800 /* TestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CD7913247BE6350025D800 /* TestOperation.swift */; };
+		12CD7916247BEB9A0025D800 /* ReadDBOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CD7915247BEB9A0025D800 /* ReadDBOperation.swift */; };
 		2B328182E4C8949BB7B81719 /* Pods_GRDBPractise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C2C8876FF939BD78FC4709B /* Pods_GRDBPractise.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +26,9 @@
 		128CCF7C247A95470037B0F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		128CCF7F247A95470037B0F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		128CCF81247A95470037B0F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12CD7911247BDDDD0025D800 /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
+		12CD7913247BE6350025D800 /* TestOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestOperation.swift; sourceTree = "<group>"; };
+		12CD7915247BEB9A0025D800 /* ReadDBOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadDBOperation.swift; sourceTree = "<group>"; };
 		4C2C8876FF939BD78FC4709B /* Pods_GRDBPractise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GRDBPractise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5BC3ABF63A875D37C06B8B1 /* Pods-GRDBPractise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GRDBPractise.release.xcconfig"; path = "Target Support Files/Pods-GRDBPractise/Pods-GRDBPractise.release.xcconfig"; sourceTree = "<group>"; };
 		E5CB3CD7EDEE179982C5AB0B /* Pods-GRDBPractise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GRDBPractise.debug.xcconfig"; path = "Target Support Files/Pods-GRDBPractise/Pods-GRDBPractise.debug.xcconfig"; sourceTree = "<group>"; };
@@ -67,6 +73,9 @@
 				128CCF7C247A95470037B0F9 /* Assets.xcassets */,
 				128CCF7E247A95470037B0F9 /* LaunchScreen.storyboard */,
 				128CCF81247A95470037B0F9 /* Info.plist */,
+				12CD7911247BDDDD0025D800 /* AsyncOperation.swift */,
+				12CD7913247BE6350025D800 /* TestOperation.swift */,
+				12CD7915247BEB9A0025D800 /* ReadDBOperation.swift */,
 			);
 			path = GRDBPractise;
 			sourceTree = "<group>";
@@ -85,7 +94,6 @@
 				E5CB3CD7EDEE179982C5AB0B /* Pods-GRDBPractise.debug.xcconfig */,
 				B5BC3ABF63A875D37C06B8B1 /* Pods-GRDBPractise.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -205,7 +213,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				128CCF78247A95450037B0F9 /* ViewController.swift in Sources */,
+				12CD7916247BEB9A0025D800 /* ReadDBOperation.swift in Sources */,
+				12CD7912247BDDDD0025D800 /* AsyncOperation.swift in Sources */,
 				128CCF74247A95450037B0F9 /* AppDelegate.swift in Sources */,
+				12CD7914247BE6350025D800 /* TestOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

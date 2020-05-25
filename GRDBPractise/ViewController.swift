@@ -15,6 +15,7 @@ import GRDB
 
 class ViewController: UIViewController {
     var dbQueue: DatabaseQueue!
+    var dbPool: DatabasePool!
     var query = #"""
 CREATE TABLE "Test_table" (
         "id"    INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
@@ -25,7 +26,10 @@ CREATE TABLE "Test_table" (
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //        asyncOperationTest()
         setupDatabase()
+        //        multiQueueTest(db: dbPool) // dbQueue
+        
         createTable()
         insertData(name: "kek", email: "kek@shmek.com")
         insertData(name: "DeleteMe", email: "DeleteMe@shmek.com")
@@ -42,6 +46,11 @@ CREATE TABLE "Test_table" (
             .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
             .appendingPathComponent("db.sqlite")
         dbQueue = try!  DatabaseQueue(path: databaseURL.absoluteString)
+        var config = Configuration()
+        config.readonly = true
+        //        config.trace = { print($0)}
+        config.maximumReaderCount = 5
+        dbPool = try! DatabasePool(path: databaseURL.absoluteString, configuration: config)
         
     }
     
@@ -59,18 +68,18 @@ CREATE TABLE "Test_table" (
     
     private func insertData(name: String, email: String) {
         do {
-                    try dbQueue.write({ db in
-                        try db.execute(sql: "INSERT INTO Test_table (name, email) VALUES (?, ?)",
-                            arguments: [name, email])
-                        try Test_table(name: "Test", email: "test@test.test").insert(db)
-                        
-            //            try UserThree(name: "TestThree", email: "testThree@asd.asd").insert(db)
-                        
-                    })
+            try dbQueue.write({ db in
+                try db.execute(sql: "INSERT INTO Test_table (name, email) VALUES (?, ?)",
+                               arguments: [name, email])
+                try Test_table(name: "Test", email: "test@test.test").insert(db)
+                
+                //            try UserThree(name: "TestThree", email: "testThree@asd.asd").insert(db)
+                
+            })
         } catch {
             print(error)
         }
-
+        
     }
     
     private func update(name: String) {
@@ -92,7 +101,7 @@ CREATE TABLE "Test_table" (
     
     private func selectUesr() {
         try? dbQueue.read { db in
-//            let users = try UserTwo.fetchAll(db, sql: "SELECT * FROM Test_table")
+            //            let users = try UserTwo.fetchAll(db, sql: "SELECT * FROM Test_table")
             let test_table = try Test_table.fetchAll(db)
             print(test_table)
         }
@@ -155,3 +164,64 @@ struct Test_table: FetchableRecord, PersistableRecord {
     let email: String
 }
 
+
+
+//MARK: Async operation test
+class SomeAction {
+    func sumElements(lhs: Int, rhs: Int, complition: @escaping (Int) -> Void ) {
+        sleep(1)
+        complition(lhs + rhs)
+    }
+}
+
+func asyncOperationTest() {
+    let operQueue = OperationQueue()
+    let arr = [(1,2),(5,12),(38,4),(100,1),(90,1),(1000,20)]
+    let someClass = SomeAction()
+    for (lhs,rhs) in arr {
+        let operation = TestOperation(lhs: lhs, rhs: rhs, someActionClass: someClass)
+        operation.completionBlock = {
+            guard let result = operation.result else { return }
+            print("\(Date().timeIntervalSince1970)  \(lhs) + \(rhs) = \(result) ")
+        }
+        operQueue.addOperation(operation)
+    }
+}
+
+func multiQueueTest<T: DatabaseWriter>(db: T) {
+    let operQueue = OperationQueue()
+    let opQ2 = OperationQueue()
+    let opQ3 = OperationQueue()
+    let arr = [ReadDBOperation<T>(columnElement: "DeleteMe", dbQP: db), ReadDBOperation(columnElement: "Test",dbQP: db), ReadDBOperation(columnElement: "kek",dbQP: db)]
+    
+    let arr2 = [ReadDBOperation<T>(columnElement: "DeleteMe", dbQP: db), ReadDBOperation(columnElement: "Test",dbQP: db), ReadDBOperation(columnElement: "kek",dbQP: db)]
+    
+    let arr3 = [ReadDBOperation<T>(columnElement: "DeleteMe", dbQP: db), ReadDBOperation(columnElement: "Test",dbQP: db), ReadDBOperation(columnElement: "kek",dbQP: db)]
+    
+    for item in arr {
+        item.completionBlock = {
+            guard let result = item.result else { return }
+            print( "opQ1 - \(result)")
+        }
+        
+        operQueue.addOperation(item)
+    }
+    
+    for item in arr2 {
+        item.completionBlock = {
+            guard let result = item.result else { return }
+            print("opQ2 - \(result)")
+        }
+        
+        opQ2.addOperation(item)
+    }
+    
+    for item in arr3 {
+        item.completionBlock = {
+            guard let result = item.result else { return }
+            print("opQ3 - \(result)")
+        }
+        
+        opQ3.addOperation(item)
+    }
+}
